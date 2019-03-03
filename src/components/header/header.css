@@ -1,0 +1,60 @@
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:host {
+  & header {
+    display: flex;
+    flex-direction: column;
+
+    & small {
+      display: block;
+    }
+  }
+
+  & header #logo {
+    height: 40vh;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: logo-spin infinite 30s linear;
+  }
+
+  & header h1 {
+    margin: 5px;
+    padding: 0 0 20px 0;
+    color: #ffffff;
+    text-shadow:1px 1px 2px #3e6726;
+
+    @media only screen and (max-width: 400px) {
+      font-size: 1.8em;
+    }
+  }
+
+  & ul {
+    list-style:none;
+    padding-left:15px;
+    line-height:1.5rem;
+    & li {
+      padding:5px;
+      text-align:left;
+      display: inline;
+
+      & a{
+        cursor:pointer;
+        color:green;
+        text-decoration:none;
+      }
+      &.active a{
+        color:#000;
+        font-weight:600;
+      }
+    }
+  }
+}
