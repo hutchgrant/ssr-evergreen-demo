@@ -9,6 +9,7 @@ This is an experimental demonstration of how server side rendering could be done
 ```
 git clone https://github.com/hutchgrant/ssr-evergreen-demo
 cd ssr-evergreen-demo
+npm i
 npm run prod
 ```
 
