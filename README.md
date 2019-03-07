@@ -10,19 +10,28 @@ This is an experimental demonstration of how server side rendering could be done
 git clone https://github.com/hutchgrant/ssr-evergreen-demo
 cd ssr-evergreen-demo
 npm i
-npm run prod
+npm run dev
 ```
 
 Browse to http://localhost:3000 check your network tab for the localhost request and see the response contains all visible components pre-rendered in html.
+
+For HMR Browse to http://localhost:1981 for webpack dev server, otherwise localhost:3000 for SSR but manual reloading.
 
 ### How it works
 
 An application is built with webpack and then served via a local web server concurrently with a node express server.  Once a request is received, the express server relays the request to puppeteer, which navigates(with some rendertron preloaded configuration) to the local web server. The resulting page can now be modified easily with anything you need to be done on the server via JSDOM, serialized, and sent back to the client.
 
+### Production
+
+```
+npm run prod
+```
+
+Browse to http://localhost:3000 for SSR, with the local front end prod server also available at localhost:1981
+
 ### TODO
 
-* get development working properly with webpack-dev-server and HMR
-* some form of caching of pre-rendered pages
+* caching pre-rendered pages for faster load times.
 
 ### License
 
