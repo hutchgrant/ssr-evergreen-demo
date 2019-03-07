@@ -9,6 +9,7 @@ module.exports = {
 
   mode: 'development',
   name: 'client',
+  target: 'web',
   devServer: {
     hot: true,
     inline: true,
@@ -26,7 +27,7 @@ module.exports = {
   ],
   output: {
     filename: 'static/js/[name].js',
-    path: path.join(__dirname, '../buildClient'),
+    path: path.resolve(__dirname, '../buildClient'),
     publicPath: ''
   },
   module: {

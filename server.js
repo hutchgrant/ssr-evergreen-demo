@@ -30,6 +30,9 @@ if (DEV) {
   const clientCompiler = compiler.compilers[0];
   const options = { hot: true, stats: { colors: true } };
 
+  app.use('/static', (req, res) => {
+    res.redirect(absPath + req.originalUrl);
+  });
   app.use(webpackDevMiddleware(compiler, options));
   app.use(webpackHotMiddleware(clientCompiler));
   app.use(webpackHotServerMiddleware(compiler, { serverRendererOptions: { absPath } }));

@@ -1,11 +1,9 @@
-// const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-// const Dotenv = require('dotenv-webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const res = p => path.resolve(__dirname, p);
 
-// const nodeModules = res('./node_modules');
 const entry = res('../renderer.js');
 const output = res('../buildServer');
 
@@ -26,12 +24,13 @@ module.exports = {
     entry
   ],
   output: {
-    path: output,
     globalObject: 'typeof self !== \'undefined\' ? self : this',
+    path: output,
     filename: '[name].js',
     libraryTarget: 'commonjs2',
     publicPath: 'buildClient/'
   },
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
@@ -54,7 +53,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.css', '.mjs', '.json']
+    extensions: ['.js', '.css', '.mjs']
   },
   plugins: [
     new webpack.DefinePlugin({

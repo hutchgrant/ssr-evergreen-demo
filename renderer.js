@@ -1,8 +1,8 @@
 import { JSDOM } from 'jsdom';
 import * as puppeteer from 'puppeteer';
-import { Renderer } from './ssr';
+import { Renderer } from './rendertron';
 
-export default ({ clientStats, absPath }) => async (req, res) => {
+export default ({ absPath }) => async (req, res) => {
 
   console.log(req.protocol + '://' + req.get('host') + req.originalUrl);
 
@@ -13,7 +13,7 @@ export default ({ clientStats, absPath }) => async (req, res) => {
     });
 
     const renderer = new Renderer(browser);
-    let result = await renderer.serialize(absPath, false);
+    let result = await renderer.serialize(absPath);
 
     // console.log(result.content);
 

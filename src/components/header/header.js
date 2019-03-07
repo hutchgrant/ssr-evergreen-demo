@@ -18,10 +18,10 @@ class HeaderComponent extends LitElement {
           <h2><strong>SSR Example App</strong></h2>
           <ul>
             <li>
-              <a href="/" aria-label="menu-item">Home Page</a>
+              <a href="/">Home Page</a>
             </li>
             <li>
-              <a href="/docs" aria-label="menu-item">Docs Page</a>
+              <a href="/docs">Docs Page</a>
             </li>
           </ul>
       </header>
