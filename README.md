@@ -29,10 +29,6 @@ yarn prod
 
 Browse to http://localhost:3000 for SSR, with the local front end prod server also available at localhost:1981
 
-### TODO
-
-* caching pre-rendered pages for faster load times.
-
 ### License
 
 Released under the MIT license
