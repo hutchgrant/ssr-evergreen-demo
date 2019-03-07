@@ -9,8 +9,8 @@ This is an experimental demonstration of how server side rendering could be done
 ```
 git clone https://github.com/hutchgrant/ssr-evergreen-demo
 cd ssr-evergreen-demo
-npm i
-npm run dev
+yarn install
+yarn dev
 ```
 
 Browse to http://localhost:3000 check your network tab for the localhost request and see the response contains all visible components pre-rendered in html.
@@ -24,7 +24,7 @@ An application is built with webpack and then served via a local web server conc
 ### Production
 
 ```
-npm run prod
+yarn prod
 ```
 
 Browse to http://localhost:3000 for SSR, with the local front end prod server also available at localhost:1981
