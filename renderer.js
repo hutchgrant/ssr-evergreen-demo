@@ -14,7 +14,7 @@ export default ({ absPath }) => async (req, res) => {
       return file.page = req.originalUrl;
     });
 
-    if (Object.keys(page).length === 0) {
+    if (page.length === 0) {
       page = { page: req.originalUrl, data: '' };
 
       const browser = await puppeteer.launch({
@@ -35,11 +35,9 @@ export default ({ absPath }) => async (req, res) => {
 
       page.data = dom.serialize();
       pages.push(page);
-      res.send(page.data);
-    } else {
-      res.send(page[0].data);
+      return res.send(page.data);
     }
-  } else {
-    res.send('');
+    return res.send(page[0].data);
   }
+  return res.send('');
 };
