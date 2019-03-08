@@ -10,13 +10,9 @@ export default ({ absPath }) => async (req, res) => {
 
   if (req.originalUrl.indexOf('.') === -1) {
 
-    let page = {};
-
-    page = pages.filter(file => {
+    let page = pages.filter(file => {
       return file.page = req.originalUrl;
     });
-
-    console.log(page);
 
     if (Object.keys(page).length === 0) {
       page = { page: req.originalUrl, data: '' };
@@ -29,8 +25,6 @@ export default ({ absPath }) => async (req, res) => {
       const renderer = new Renderer(browser);
 
       let result = await renderer.serialize(absPath + req.originalUrl);
-
-      // console.log(result.content);
 
       const dom = new JSDOM(result.content);
 
@@ -48,5 +42,4 @@ export default ({ absPath }) => async (req, res) => {
   } else {
     res.send('');
   }
-
 };
