@@ -27,7 +27,7 @@ An application is built with webpack and then served via a local web server conc
 yarn prod
 ```
 
-Browse to http://localhost:3000 for SSR, with the local front end prod server also available at localhost:1981
+Browse to http://localhost:3000 for SSR, with the local front end prod server also available at localhost:8000
 
 ### License
 
