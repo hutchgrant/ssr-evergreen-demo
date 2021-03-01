@@ -36,7 +36,7 @@
     "pwa-helpers": "^0.9.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "rendertron": "^2.0.1"
+    "rendertron": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
